@@ -14,7 +14,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDate($attribute, $value, $parameters)
+    public function validateDate($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -55,7 +55,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateEqual($attribute, $value, $parameters)
+    public function validateDateEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -79,7 +79,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateNotEqual($attribute, $value, $parameters)
+    public function validateDateNotEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -102,7 +102,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTime($attribute, $value, $parameters)
+    public function validateDateTime($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -127,7 +127,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTimeEqual($attribute, $value, $parameters)
+    public function validateDateTimeEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -151,7 +151,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTimeNotEqual($attribute, $value, $parameters)
+    public function validateDateTimeNotEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -175,7 +175,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateAfter($attribute, $value, $parameters)
+    public function validateDateAfter($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -199,7 +199,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateAfterEqual($attribute, $value, $parameters)
+    public function validateDateAfterEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -223,7 +223,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTimeAfter($attribute, $value, $parameters)
+    public function validateDateTimeAfter($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -247,7 +247,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTimeAfterEqual($attribute, $value, $parameters)
+    public function validateDateTimeAfterEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -271,7 +271,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateBefore($attribute, $value, $parameters)
+    public function validateDateBefore($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -295,7 +295,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateBeforeEqual($attribute, $value, $parameters)
+    public function validateDateBeforeEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -319,7 +319,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTimeBefore($attribute, $value, $parameters)
+    public function validateDateTimeBefore($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -343,7 +343,7 @@ class JalaliValidator
      * @param array $parameters
      * @return bool
      */
-    public function validateDateTimeBeforeEqual($attribute, $value, $parameters)
+    public function validateDateTimeBeforeEqual($attribute, $value, $parameters): bool
     {
         if (!is_string($value)) {
             return false;
@@ -367,7 +367,7 @@ class JalaliValidator
      * @param $parameters
      * @return string
      */
-    public function replaceDateOrDatetime($message, $attribute, $rule, $parameters)
+    public function replaceDateOrDatetime($message, $attribute, $rule, $parameters): string
     {
         return $message;
     }
@@ -380,7 +380,7 @@ class JalaliValidator
      * @param $parameters
      * @return string
      */
-    public function replaceDateAfterOrBeforeOrEqual($message, $attribute, $rule, $parameters)
+    public function replaceDateAfterOrBeforeOrEqual($message, $attribute, $rule, $parameters): string
     {
         $format = count($parameters) > 1 ? $parameters[1] : 'Y/m/d';
         $date = count($parameters) ? $parameters[0] : Verta::instance()->format($format);
@@ -401,7 +401,7 @@ class JalaliValidator
      * @param $parameters
      * @return string
      */
-    public function replaceDateTimeAfterOrBeforeOrEqual($message, $attribute, $rule, $parameters)
+    public function replaceDateTimeAfterOrBeforeOrEqual($message, $attribute, $rule, $parameters): string
     {
         $format = count($parameters) > 1 ? $parameters[1] : 'Y/m/d H:i:s';
         $date = count($parameters) ? $parameters[0] : Verta::instance()->format($format);
